@@ -12,9 +12,13 @@ app.set('view engine', 'handlebars');
 
 // Routes
 app.get('/', (req, res) => {
-    const gifUrl = 'https://media.giphy.com/media/26ufcfqqe6Fobdygg/giphy.gif'
-    res.render('hello-gif', { gifUrl })
+    console.log(req.query) // => "{ term: hey" }
+    res.render('home')
 })
+// app.get('/', (req, res) => {
+//     const gifUrl = 'https://media.giphy.com/media/26ufcfqqe6Fobdygg/giphy.gif'
+//     res.render('hello-gif', { gifUrl })
+// })
 
 app.get('/greetings/:name', (req, res) => {
     const name = req.params.name;
